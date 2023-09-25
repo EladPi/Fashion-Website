@@ -1,0 +1,9 @@
+
+
+.container.mt-5{
+    max-width: 530px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Optional: Add a subtle shadow to the form */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;  /* Round the container's edges */
+}

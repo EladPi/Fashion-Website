@@ -1,0 +1,52 @@
+/* Global Styles for the Cart Component */
+.cartul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.cart-item-container {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border-bottom: 1px solid #e0e0e0; /* Separate items with a line */
+    padding: 15px 0; /* Provide some spacing above and below the item */
+    margin: 0 5%; /* Margin from left and right for a little space */
+    max-width: 60%;
+    margin: auto;
+}
+
+/* Product Image */
+.cart-item-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    position: relative;
+    left: 10%;
+    border-radius: 3px;
+}
+
+/* Item Details */
+.cart-item-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Ensures that this section uses all available space */
+    display: inline-block;
+    
+}
+
+
+
+/* Total Price */
+#cart-total-price {
+    margin-top: 20px;
+    font-size: 1.2rem; /* Make the total price slightly larger */
+    font-weight: 500; /* Make the text bold */
+}
+
+
+
+

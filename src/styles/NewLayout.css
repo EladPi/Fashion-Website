@@ -1,0 +1,138 @@
+body, h1, a {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.home-page {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.header {
+    background-color: #f4f4f4;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.layoutnavbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.layoutnavbar ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.layoutnavbar li {
+    margin: 0 15px; /* Space between each navbar item */
+}
+
+.layoutnavbar a {
+    text-decoration: none;
+    color: #333;  /* Dark color for text */
+    padding: 5px 10px;  /* Padding around each link */
+    border-radius: 5px;  /* Slightly rounded corners */
+    transition: background-color 0.3s, color 0.3s;  /* Smooth transition for hover */
+}
+
+.layoutnavbar a:hover {
+    background-color: #eaeaea;  /* Light gray background on hover */
+    color: #555;  /* Slightly darker text on hover */
+}
+
+
+
+.layoutnavbar > ul > li {
+    position: relative;
+}
+
+
+/* Styles for the dropdown */
+.layoutdropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+    background-color: #f4f4f4;
+    border: 1px solid #eaeaea;
+    padding: 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 135px;
+    z-index: 1000;
+    
+}
+
+.layoutdropdown li {
+    padding: 10px;  /* Padding inside each dropdown item */
+    border-bottom: 1px solid #eaeaea;  /* Border between items */
+    transition: background-color 0.3s;  /* Smooth transition for hover */
+    display: block;
+}
+
+.layoutdropdown li:last-child {
+    border-bottom: none;  /* Removes border for the last item */
+}
+
+.layoutdropdown li:hover {
+    background-color: #eaeaea;  /* Lighter gray background on hover */
+}
+
+.layoutdropdown a {
+    display: block;  /* Makes the entire area clickable */
+}
+
+.layoutnavbar li:hover .layoutdropdown {
+    display: block;
+    
+}
+
+
+
+/* Responsive Navigation styles */
+@media (max-width: 768px) {
+    .layoutnavbar > ul {
+        display: none; /* hide by default for mobile */
+        flex-direction: column;
+    }
+
+    .layoutnavbar.active > ul {
+        display: flex;  /* show when menu is active */
+    }
+
+    /* Show dropdown when parent <a> is clicked for mobile */
+    .layoutnavbar li.active > ul.layoutdropdown {
+        display: block; 
+    }
+
+    .burger-menu {
+        display: block; /* show burger menu button for mobile */
+    }
+}
+
+/* Desktop navigation styles */
+@media (min-width: 769px) {
+    .layoutnavbar > ul {
+        display: flex;  /* horizontal nav for desktop */
+        justify-content: center;
+    }
+
+    .burger-menu {
+        display: none;  /* hide burger menu button for desktop */
+    }
+}
