@@ -2,7 +2,7 @@ export const data = {
     items: [
       {
         id: 1,
-        imgSrc: 'https://images.unsplash.com/photo-1463080197951-ea6abbd2bb9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mnw0Mjg3MDZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60',
+        imgSrc: 'https://image.hm.com/assets/hm/0c/b0/0cb0cac09cbcb91bdb31f40b383a3c08a0a159f8.jpg?imwidth=528',
         name: 'Item Name 1',
         description: 'This is a description for item 1',
         price: 150,
@@ -13,7 +13,7 @@ export const data = {
       },
       {
         id: 2,
-        imgSrc: 'https://images.unsplash.com/photo-1464278860589-b2ed64f87e22?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw0Mjg3MDZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60',
+        imgSrc: 'https://image.hm.com/assets/hm/ca/f7/caf72cbe49f508258445ef50e5b8cf78336bbcb4.jpg?imwidth=528',
         name: 'Item Name 2',
         description: 'This is a description for item 2',
         price: 120,
@@ -24,7 +24,7 @@ export const data = {
       },
       {
         id: 3,
-        imgSrc: 'https://images.unsplash.com/photo-1460639763825-d45267e63cd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Nnw0Mjg3MDZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60',
+        imgSrc: 'https://image.hm.com/assets/hm/97/51/9751feef69be699b6732dbf585215159d24487fd.jpg?imwidth=528',
         name: 'Item Name 3',
         description: 'This is a description for item 3',
         price: 100,
@@ -35,7 +35,7 @@ export const data = {
       },
       {
         id: 4,
-        imgSrc: 'https://images.unsplash.com/photo-1445075872771-51fff9fbbfa1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8N3w0Mjg3MDZ8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=60',
+        imgSrc: 'https://image.hm.com/assets/hm/df/01/df01f1eefbff1c94c4db91bea83638d4a36eec21.jpg?imwidth=528',
         name: 'Item Name 4',
         description: 'This is a description for item 4',
         price: 80,
@@ -46,12 +46,12 @@ export const data = {
       },
       {
         id: 5,
-        imgSrc: 'https://images.unsplash.com/photo-1428790031246-698d71b6fe3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTV8NDI4NzA2fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=400&q=60',
+        imgSrc: 'https://image.hm.com/assets/hm/ab/0f/ab0f970b234b46725ca125d8c8daa76ea8d5e9a7.jpg?imwidth=528',
         name: 'Item Name 5',
         description: 'This is a description for item 5',
         price: 120,
         type: 'shoes',
-        color: 'red',
+        color: 'brown',
         size: '43',
         category: 'Men Shoes'
       },
