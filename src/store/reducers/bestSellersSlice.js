@@ -19,10 +19,10 @@ function getBestSellers(data) {
 const bestSellersInitialState = {
   items: [...getBestSellers(data)],
   filters: {
-    type: '',
-    color: '',
-    size: '',
-    priceRange: { min: 0, max: 500 } // Example price range
+    type: [],  // Now an array
+    color: [],
+    size: [],
+    priceRange: { min: 0, max: 500 }
   }
 };
 
@@ -53,16 +53,45 @@ const bestSellersSlice = createSlice({
     },
     applyFilter: (state, action) => {
       const { type, color, size, priceRange } = action.payload;
-      if (type) state.filters.type = type;
-      if (color) state.filters.color = color;
-      if (size) state.filters.size = size;
-      if (priceRange) state.filters.priceRange = priceRange;
+      
+      if(type) {
+        if(type === 'all') {
+          state.filters.type = [];
+        } else if(!state.filters.type.includes(type)) {
+          state.filters.type.push(type);
+        } else {
+          state.filters.type = state.filters.type.filter(t => t !== type);  // Remove if already present
+        }
+      }
+    
+      // Repeat similar logic for color and size
+      if(color) {
+        if(color === 'all') {
+          state.filters.color = [];
+        } else if(!state.filters.color.includes(color)) {
+          state.filters.color.push(color);
+        } else {
+          state.filters.color = state.filters.color.filter(c => c !== color);
+        }
+      }
+    
+      if(size) {
+        if(size === 'all') {
+          state.filters.size = [];
+        } else if(!state.filters.size.includes(size)) {
+          state.filters.size.push(size);
+        } else {
+          state.filters.size = state.filters.size.filter(s => s !== size);
+        }
+      }
+      
+      if(priceRange) state.filters.priceRange = priceRange;
     },
     clearFilters: (state) => {
       state.filters = {
-        type: '',
-        color: '',
-        size: '',
+        type: [],
+        color: [],
+        size: [],
         priceRange: { min: 0, max: 500 }
       };
     }    
@@ -77,11 +106,29 @@ export const selectBestSellersWomen = (state) => state.bestSellers.items.filter(
 export const selectBestSellersKids = (state) => state.bestSellers.items.filter(item =>item.category.includes('Kids'));
 export const selectBestSellersAll = (state) => state.bestSellers.items;
 
-
+/*
+MIGHT BE POSSIBLE TO DELETE.
 export const selectBestSellersShoes = (state) => state.bestSellers.items.filter(item => item.category === 'Men Shoes' || item.category === 'Women Shoes' || item.category === 'Kids Shoes');
 export const selectBestSellersPants = (state) => state.bestSellers.items.filter(item => item.category === 'Men Pants' || item.category === 'Women Pants' || item.category === 'Kids Pants');
 export const selectBestSellersTShirts = (state) => state.bestSellers.items.filter(item => item.category === 'Men T-Shirts' || item.category === 'Women T-Shirts' || item.category === 'Kids T-Shirts' );
+*/
+
 export const selectSpecificItemFromBestSellers = (state,itemId) => state.bestSellers.items.find(item => item.id == itemId);
+
+export const selectFilteredBestSellersItems = (state, startingState) => {
+  let filteredItems = startingState;
+  const { type, color, size, priceRange } = state.bestSellers.filters;
+
+  if (type.length > 0) filteredItems = filteredItems.filter(item => type.includes(item.category));
+  if (color.length > 0) filteredItems = filteredItems.filter(item => color.includes(item.color));
+  if (size.length > 0) filteredItems = filteredItems.filter(item => size.includes(item.size));
+
+  // Assuming each item has a 'price' field
+  filteredItems = filteredItems.filter(item => item.price >= priceRange.min && item.price <= priceRange.max);
+
+  return filteredItems;
+};
+
 
 export const { addItem, removeItem, updateItem, applyFilter , clearFilters } = bestSellersSlice.actions;
 export default bestSellersSlice.reducer;

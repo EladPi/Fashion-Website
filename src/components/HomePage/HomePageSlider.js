@@ -29,7 +29,7 @@ function HomePageSlider({ data, fromCategory }) {
       {fromCategory === 'NewCollection' ? <h2>New Collection</h2> : <h2> Whats Hot?</h2>}
       <Swiper
         slidesPerView={3}
-        spaceBetween={30}
+        spaceBetween={40}
         loop={true}
         pagination={{
           dynamicBullets: true

@@ -1,18 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ItemList } from '../ItemList';
-import { selectBestSellersMen } from '../../store/reducers/bestSellersSlice';
-import "../../styles/componentsStyle.css"
+import { selectBestSellersMen, selectFilteredBestSellersItems, applyFilter , clearFilters } from '../../store/reducers/bestSellersSlice';
+import FilterComponent from '../Filters/FilterComponent';import "../../styles/componentsStyle.css"
 
 
 export const BestSellersMen = () => {
     const bestSellersItems = useSelector(selectBestSellersMen);
+    const bestSellersFilteredItems = useSelector((state) => selectFilteredBestSellersItems(state,bestSellersItems))
+
 
     return (
         <>
-        <div className="container">
+        <div className="men-all-container">
             <h2>Men Best Sellers</h2>
-            <ItemList items={bestSellersItems} category='bestsellers'/>
+            <FilterComponent callingComponent='' applyFilter={applyFilter} clearFilters={clearFilters}/>
+            <ItemList items={bestSellersFilteredItems} category='bestsellers'/>
         </div>
         </>
     );

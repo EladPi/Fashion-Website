@@ -2,18 +2,17 @@
     max-width: 80%;
     height: 50%;
     margin: 10px;
-    padding: 10px;
+    padding: 30px;
     padding-bottom: 30px;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid red;
     margin-bottom: 20%;
     
     
   }
 
   .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{
-    top: 97%;
+    top: 95.8%;
   }
 
   .swiper-slide {
@@ -30,7 +29,7 @@
 
   .swiper-slide img {
     display: block;
-    max-width: 300px;
+    max-width: 330px;
     height: auto;
     object-fit: cover;
   }
