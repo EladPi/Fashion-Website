@@ -104,6 +104,8 @@ export const selectFilteredWomenItems = (state, startingState) => {
   return filteredItems;
 };
 
+export const selectCurrentFilters = (state) => state.women.filters;
+
 
 
   export const { addItem, removeItem, updateItem, applyFilter , clearFilters } = womenSlice.actions;

@@ -33,14 +33,14 @@ const AppRoutes = () => (
         <Route path="/men/viewall" element={<Layout><MenAll /></Layout>} />
         <Route path="/men/shoes" element={<Layout><MenShoes /></Layout>} />
         <Route path="/men/pants" element={<Layout><MenPants /></Layout>} />
-        <Route path="/men/t-shirts" element={<Layout><MenTShirts /></Layout>} />
+        <Route path="/men/tshirts" element={<Layout><MenTShirts /></Layout>} />
         <Route path="/women/viewall" element={<Layout><WomenAll /></Layout>} />
         <Route path="/women/pants" element={<Layout><WomenPants /></Layout>} />
         <Route path="/women/shoes" element={<Layout><WomenShoes /></Layout>} />
-        <Route path="/women/t-shirts" element={<Layout><WomenTShirts /></Layout>} />
+        <Route path="/women/tshirts" element={<Layout><WomenTShirts /></Layout>} />
         <Route path="/kids/viewall" element={<Layout><KidsAll /></Layout>} />
         <Route path="/kids/pants" element={<Layout><KidsPants /></Layout>} />
-        <Route path="/kids/t-shirts" element={<Layout><KidsTShirts /></Layout>} />
+        <Route path="/kids/tshirts" element={<Layout><KidsTShirts /></Layout>} />
         <Route path="/kids/shoes" element={<Layout><KidsShoes /></Layout>} />
         <Route path="/bestsellers/viewall" element={<Layout><BestSellersAll /></Layout>} />
         <Route path="/bestsellers/men" element={<Layout><BestSellersMen /></Layout>} />

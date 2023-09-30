@@ -13,7 +13,7 @@ const menInitialState = {
     type: [],  // Now an array
     color: [],
     size: [],
-    priceRange: { min: 0, max: 500 }
+    priceRange: { min: 0, max: 200 }
   }
 };
 
@@ -82,7 +82,7 @@ const menSlice = createSlice({
         type: [],
         color: [],
         size: [],
-        priceRange: { min: 0, max: 500 }
+        priceRange: { min: 0, max: 200 }
       };
     }
     // Other reducers will go here, like removeItem, updateItem, etc.
@@ -109,6 +109,8 @@ export const selectFilteredMenItems = (state, startingState) => {
 
   return filteredItems;
 };
+
+export const selectCurrentFilters = (state) => state.men.filters;
 
 
 

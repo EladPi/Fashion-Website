@@ -129,6 +129,9 @@ export const selectFilteredBestSellersItems = (state, startingState) => {
   return filteredItems;
 };
 
+export const selectCurrentFilters = (state) => state.bestSellers.filters;
+
+
 
 export const { addItem, removeItem, updateItem, applyFilter , clearFilters } = bestSellersSlice.actions;
 export default bestSellersSlice.reducer;

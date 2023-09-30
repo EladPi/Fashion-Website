@@ -2,6 +2,7 @@ import { incrementByOne, decrementByOne, selectCartItems, selectCartNumberOfItem
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { PaymentForm } from './PaymentForm';
+import { Button } from '@nextui-org/react';
 import '../../styles/cart.css';
 
 
@@ -10,6 +11,8 @@ export function Cart() {
     const numOfItems = useSelector(selectCartNumberOfItems);
     const cartTotalPrice = useSelector(selectCartTotalAmount);
     const dispatch = useDispatch();
+
+    console.log(cartItems);
 
     const handleIncrement = (item) => {
         dispatch(incrementByOne(item))
@@ -26,13 +29,17 @@ export function Cart() {
                     {cartItems.map(item => (
                         <li key={item.id}>
                             <div className='cart-item-container'>
-                                <img src={item.imgSrc} alt={item.description} />
+                                <img className='cart-item-img' src={item.imgSrc} alt={item.description} />
                                 <div className='cart-item-details'>
                                     <p className='cart-item-detail' id='cart-item-name'>{item.name}</p>
                                     <p className='cart-item-detail' id='cart-item-price'>${item.price} ea.</p>
-                                    <button className='btn btn-primary' onClick={() => handleDecrement(item.id)}>-</button>
+                                    <button onClick={() => handleDecrement(item.id)}>
+                                        <img className='cart-icon' src='/square-minus-regular.svg'></img>
+                                    </button>
                                     <span className='cart-item-detail' id='layout-item-quantity'>{item.quantity}</span>
-                                    <button className='btn btn-primary' onClick={() => handleIncrement(item.id)}>+</button>
+                                    <button onClick={() => handleIncrement(item.id)}>
+                                        <img className='cart-icon' src='/square-plus-regular.svg'></img>
+                                    </button>
 
                                 </div>
                             </div>

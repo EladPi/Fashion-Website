@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '@nextui-org/react';
 import '../../styles/paymentForm.css';
 
 export function PaymentForm() {
@@ -67,7 +68,7 @@ export function PaymentForm() {
                     </div>
                 </div>
 
-                <button type="submit" className="btn btn-success" onClick={handleSubmit}>Pay Now</button>
+                <Button type="submit" color='success' variant='ghost' onClick={handleSubmit} className='paymentform-button'>Pay Now</Button>
             </form>
         </div>
     );

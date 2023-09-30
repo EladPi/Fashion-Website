@@ -1,12 +1,27 @@
+
+
+
 body, h1, .nav-link {
     font-family: 'Roboto', sans-serif;
 }
 
-
-
 .home-page {
     text-align: center;
     padding: 2rem 0;
+    
+}
+
+.layout-button{
+    margin-right: 8px;
+}
+
+.gotocart-button{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.nav-link{
+    margin: 5px;
 }
 
 .header {
@@ -28,39 +43,19 @@ body, h1, .nav-link {
     width: 100%;
 }
 
-.layoutnavbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0 auto;
-}
 
 .layoutnavbar li {
     position: relative;
     display: inline-block;
-    margin: 0 1.8rem;
+    
     cursor: pointer;
     
 }
 
-.nav-link {
-    padding: 0.7rem 1rem;
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    transition: color 0.3s, background-color 0.3s;
-    border-radius: 0.5rem;
-    position: relative;
-}
 
 
-.nav-link:hover {
-    background-color: #eaeaea;
-    color: #333;
-}
 
-.btn.btn-info{
-    margin-bottom: 10px;
-}
+
 
 
 .layoutdropdown {
@@ -120,15 +115,15 @@ body, h1, .nav-link {
 
 .layout-total-cart-quantity {
     position: absolute;
-    top: 0.2rem;
-    right: -0.4rem;
+    top: 0.9rem;
+    right: 1.6rem;
     background-color: red;
     color: #fff;
     border-radius: 50%; /* Makes it a circle */
     padding: 0.05rem 0.25rem; /* Gives it some space */
     font-size: 0.6rem; /* Adjust the font size if needed */
     transform: translate(50%, -50%); /* Adjusts its position to top-right outside the <a> */
-    z-index: 1;
+    z-index: 1000;
 }
 
 /* 2. Style the cart item */
@@ -137,11 +132,22 @@ body, h1, .nav-link {
     align-items: center; /* Center items vertically */
 }
 
-.layout-item-container img {
+.layout-cart-item-img {
     max-width: 90px;
     max-height: 90px;
     object-fit: cover; /* Ensures the image keeps its aspect ratio */
     margin-right: 10px;
+}
+
+.cart-icon {
+    width: 30px;   /* or any preferred width */
+    height: 30px;  /* or any preferred height */
+    padding-top: 5px;
+    transition: all 0.2s;
+}
+
+.cart-icon:hover{
+    transform: scale(1.1)
 }
 
 .layout-item-detail#layout-item-name,

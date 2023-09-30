@@ -105,6 +105,9 @@ export const selectFilteredKidsItems = (state, startingState) => {
   return filteredItems;
 };
 
+export const selectCurrentFilters = (state) => state.kids.filters;
+
+
 
 export const { addItem, removeItem, updateItem, applyFilter , clearFilters } = kidsSlice.actions;
 export default kidsSlice.reducer;

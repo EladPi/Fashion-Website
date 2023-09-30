@@ -6,9 +6,13 @@ const cartInitialState = {
   totalNumOfItems: 0
 };
 
+//Will upload the saved data in storage if there's one.
+const storedCart = JSON.parse(localStorage.getItem('cart')) || cartInitialState;
+
+
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: cartInitialState,
+  initialState: storedCart,
   reducers: {
     addItemToCart: (state, action) => {
       const newItem = action.payload;
@@ -84,6 +88,9 @@ const cartSlice = createSlice({
 export const selectCartTotalAmount = (state) => state.cart.totalAmount;
 export const selectCartNumberOfItems= (state) => state.cart.totalNumOfItems;
 export const selectCartItems = (state) => state.cart.items;
+
+
+
 
 export const { addItemToCart, removeItemFromCart, incrementByOne, decrementByOne ,clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

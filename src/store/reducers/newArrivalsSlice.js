@@ -126,6 +126,9 @@ export const selectFilteredNewArrivalsItems = (state, startingState) => {
   return filteredItems;
 };
 
+export const selectCurrentFilters = (state) => state.newArrivals.filters;
+
+
 
 
 export const { addItem, removeItem, updateItem, applyFilter , clearFilters } = newArrivalsSlice.actions;

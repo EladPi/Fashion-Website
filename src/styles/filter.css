@@ -16,7 +16,25 @@
     
 }
 
-.price-range{
-    color: red;
+
+.current-filters{
+    font-size: 12px;
+    font-weight: 200;
+    margin-left: 15%;
+    width: fit-content;
+    
+}
+
+.clear-filter-button{
+    background-color: lightgray;
+    border-radius: 5px;
+    margin-top: -15px;
+    padding: 2px;
+    font-size: 0.7rem;
+    transition: all 0.2s;
+}
+
+.clear-filter-button:hover{
+    background-color: darkgrey;
 }
 
