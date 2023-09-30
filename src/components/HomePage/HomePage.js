@@ -12,8 +12,10 @@ function HomePage() {
 
     return (
         <>
+        <div className='home-page-slider-div'>
         <HomePageSlider data ={bestSellers} fromCategory='NewCollection'/>
         <HomePageSlider data ={newArrivals} fromCategory='WhatsHot'/>
+        </div>
         </>
     );
 }

@@ -1,4 +1,9 @@
 /* Global Styles for the Cart Component */
+.cart-page-div{
+    color: white;
+}
+
+
 .cartul {
     list-style: none;
     padding: 0;
@@ -28,11 +33,23 @@
     border-radius: 3px;
 }
 
+
+
 .cart-icon {
-    width: 30px;   /* or any preferred width */
-    height: 30px;  /* or any preferred height */
+    width: 28px;   /* or any preferred width */  /* or any preferred height */
+    height: auto;
     padding-top: 5px;
     transition: all 0.2s;
+}
+
+#minus-icon{
+    width: 26.5px;
+    height: 34px;
+}
+
+#plus-icon{
+    width: 30px;
+    height: 35px;
 }
 
 .cart-icon:hover{
@@ -48,6 +65,7 @@
     display: inline-block;
     
 }
+
 
 
 

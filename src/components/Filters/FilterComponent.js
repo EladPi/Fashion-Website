@@ -1,6 +1,6 @@
 // FilterComponent.js
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Form, Button, Dropdown } from 'react-bootstrap';
@@ -9,6 +9,7 @@ import '../../styles/filter.css'
 const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentFilters }) => {
     const dispatch = useDispatch();
     const location = useLocation();
+    const navigation = useNavigate();
 
     const [price, setPrice] = useState();  // Default to the middle of your range
 
@@ -16,7 +17,7 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
     //Whenever the URL changes, the filters are reseted.
     useEffect(() => {
         dispatch(clearFilters())
-    }, [location, dispatch]);
+    }, [location]);
 
 
     const handleFilterChange = (e) => {
@@ -31,6 +32,7 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
 
     const handleClearFilters = () => {
         dispatch(clearFilters());
+        navigation(location.pathname)
     }
 
 
@@ -47,7 +49,7 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
                 <h3 className="mb-3">Filter By: </h3>
 
                 <Dropdown className="filter-group">
-                    <Dropdown.Toggle variant="secondary" id="type-dropdown">
+                    <Dropdown.Toggle variant="primary" id="type-dropdown">
                         Type
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -63,7 +65,7 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
                 </Dropdown>
 
                 <Dropdown className="filter-group">
-                    <Dropdown.Toggle variant="secondary" id="color-dropdown">
+                    <Dropdown.Toggle variant="primary" id="color-dropdown">
                         Color
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -114,7 +116,7 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
                 </Dropdown>
 
                 <Dropdown className="filter-group">
-                    <Dropdown.Toggle variant="secondary" id="color-dropdown">
+                    <Dropdown.Toggle variant="primary" id="size-dropdown">
                         Size
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
@@ -178,10 +180,7 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
                         />
                     </Form.Group>
                 </div>
-
-                <button className='clear-filter-button' onClick={handleClearFilters}>Clear Filters</button>
             </Form>
-
 
             <div className="current-filters">
                 <strong>Current Filters: </strong>

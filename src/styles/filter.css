@@ -10,10 +10,14 @@
     margin-right: auto;
 }
 
+.filter-container h3{
+    margin-top: 8px;
+}
+
 .filter-group {
     flex: 3; 
     max-width: 180px;  /* Set a reasonable min-width */
-    
+    font-size: 0.8rem;
 }
 
 
@@ -25,16 +29,8 @@
     
 }
 
-.clear-filter-button{
-    background-color: lightgray;
-    border-radius: 5px;
-    margin-top: -15px;
-    padding: 2px;
-    font-size: 0.7rem;
-    transition: all 0.2s;
+#type-dropdown , #color-dropdown , #size-dropdown{
+    padding-top:4px;
 }
 
-.clear-filter-button:hover{
-    background-color: darkgrey;
-}
 

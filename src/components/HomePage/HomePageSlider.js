@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Button } from '@nextui-org/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -26,14 +27,13 @@ function HomePageSlider({ data, fromCategory }) {
 
   return (
     <>
+      
       {fromCategory === 'NewCollection' ? <h2>New Collection</h2> : <h2> Whats Hot?</h2>}
       <Swiper
         slidesPerView={3}
         spaceBetween={40}
         loop={true}
-        pagination={{
-          dynamicBullets: true
-        }}
+        pagination={true}
         navigation={true}
         modules={[Pagination, Navigation]}
         breakpoints={{
@@ -65,7 +65,7 @@ function HomePageSlider({ data, fromCategory }) {
                 <Link
                   to={`/${categoryFixer(item)}/${item.id}/${slugify(item.name)}`}
                 >
-                  <button className='slider-button'>View More</button>
+                  <Button variant='flat' color='primary'>View More</Button>
                 </Link>
               </div>
             </div>

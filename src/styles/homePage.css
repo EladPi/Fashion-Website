@@ -1,3 +1,8 @@
+  .home-page-slider-div{
+    color: white;
+  }
+  
+  
   .swiper {
     max-width: 80%;
     height: 50%;
@@ -7,8 +12,6 @@
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20%;
-    
-    
   }
 
   .swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic{
@@ -18,20 +21,24 @@
   .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: transparent;
     padding: 10px;
     height: auto;
     /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);  }
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0px 4px 12px rgba(214, 202, 202, 0.1);
+  }
 
   .swiper-slide img {
     display: block;
     max-width: 330px;
     height: auto;
     object-fit: cover;
+    border-radius: 5px;
   }
 
   .swiper-button-next{

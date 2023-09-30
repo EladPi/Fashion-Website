@@ -39,13 +39,13 @@ function Layout({ children }) {
   return (
     <div className="home-page">
       <header className="header">
-        <h1 className="logo">Your Store Name</h1>
+        <Link className='logo-link' to='/'><h1 className="logo">My Fashion Store</h1></Link>
         <nav className='layoutnavbar'>
           {options.map(option => (
             <Dropdown >
               <DropdownTrigger>
                 <Button
-                  variant="faded"
+                  variant="ghost"
                   className='layout-button'
                   color='primary'
                 >
@@ -65,7 +65,7 @@ function Layout({ children }) {
             <Dropdown className='layout-dropdown'>
               <DropdownTrigger>
                 <Button
-                  variant="faded"
+                  variant="ghost"
                   className='layout-button'
                   color='primary'
                 >
@@ -86,9 +86,9 @@ function Layout({ children }) {
 
           <li>
             <Button
-              variant="faded"
+              variant="ghost"
               className='layout-button'
-              color='primary'
+              color='success'
             >
               Cart
             </Button>
@@ -116,7 +116,11 @@ function Layout({ children }) {
               ))}
               {cartTotalPrice > 0 ? <li className='item-detail' id='cart-total-price'>Total Price: ${cartTotalPrice}</li> : 'Your cart is currently empty'}
 
-              <Link className='cart-link' to="/cart"><Button variant="ghost" color='success' className='gotocart-button'>Go To Cart</Button></Link>
+              <Link className='cart-link' to="/cart">
+                <Button size='sm' variant="flat" color='success' className='gotocart-button'>
+                  Go To Cart
+                </Button>
+              </Link>
 
             </ul>
           </li>

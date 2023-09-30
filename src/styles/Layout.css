@@ -1,13 +1,11 @@
-
-
-
-body, h1, .nav-link {
-    font-family: 'Roboto', sans-serif;
-}
+html, body, #root, #root > * {
+    background-color: #181818 !important;
+    min-height: 100vh;
+  }
 
 .home-page {
     text-align: center;
-    padding: 2rem 0;
+    background-color: #181818;
     
 }
 
@@ -16,8 +14,8 @@ body, h1, .nav-link {
 }
 
 .gotocart-button{
-    margin-top: 7px;
-    margin-bottom: 7px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 .nav-link{
@@ -25,17 +23,31 @@ body, h1, .nav-link {
 }
 
 .header {
-    background-color: #f4f4f4;
+    background-color: #0B0B0B;
     padding: 1rem 0;
-    border-bottom: 1px solid #eaeaea;
     margin-bottom: 20px;
+    box-shadow: 0 10px 25px -5px #000;
+    
 }
 
 .logo {
     font-size: 2.5rem;
-    color: #333;
+    color: silver;
+    font-family: 'Dancing Script', cursive;
     font-weight: 500;
     margin-bottom: 1rem;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+.logo-link{
+    text-decoration: none;
+}
+.logo-link:hover{
+    text-decoration: none;
 }
 
 .layoutnavbar {
@@ -47,7 +59,6 @@ body, h1, .nav-link {
 .layoutnavbar li {
     position: relative;
     display: inline-block;
-    
     cursor: pointer;
     
 }
@@ -116,8 +127,8 @@ body, h1, .nav-link {
 .layout-total-cart-quantity {
     position: absolute;
     top: 0.9rem;
-    right: 1.6rem;
-    background-color: red;
+    right: 1.4rem;
+    background-color: rgb(35, 157, 35);
     color: #fff;
     border-radius: 50%; /* Makes it a circle */
     padding: 0.05rem 0.25rem; /* Gives it some space */
