@@ -18,7 +18,6 @@
     justify-content: right;
     border-bottom: 1px solid #e0e0e0; /* Separate items with a line */
     padding: 15px 0; /* Provide some spacing above and below the item */
-    margin: 0 5%; /* Margin from left and right for a little space */
     max-width: 60%;
     margin: auto;
 }
@@ -36,8 +35,6 @@
 
 
 .cart-icon {
-    width: 28px;   /* or any preferred width */  /* or any preferred height */
-    height: auto;
     padding-top: 5px;
     transition: all 0.2s;
 }
@@ -58,9 +55,6 @@
 
 /* Item Details */
 .cart-item-details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-grow: 1; /* Ensures that this section uses all available space */
     display: inline-block;
     
