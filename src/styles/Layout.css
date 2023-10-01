@@ -3,14 +3,16 @@ html, body, #root, #root > * {
     min-height: 100vh;
   }
 
-.home-page {
+  .home-page {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     background-color: #181818;
-    
 }
 
 .layout-button{
     margin-right: 8px;
+    
 }
 
 .gotocart-button{
@@ -25,9 +27,8 @@ html, body, #root, #root > * {
 .header {
     background-color: #0B0B0B;
     padding: 1rem 0;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     box-shadow: 0 10px 25px -5px #000;
-    
 }
 
 .logo {
@@ -36,36 +37,74 @@ html, body, #root, #root > * {
     font-family: 'Dancing Script', cursive;
     font-weight: 500;
     margin-bottom: 1rem;
-    width: max-content;
+    width: 100%;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    
-    
 }
 
-.logo-link{
-    text-decoration: none;
-}
-.logo-link:hover{
+.logo-link, .logo-link:hover {
     text-decoration: none;
 }
 
 .layoutnavbar {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  /* This will wrap navbar items on smaller screens */
     width: 100%;
 }
 
 
 .layoutnavbar li {
     position: relative;
-    display: inline-block;
+    margin-right: 0.5rem;
     cursor: pointer;
-    
 }
 
 
+@media (max-width: 1200px) {
+    .logo {
+        font-size: 2rem;
+    }
+}
 
+@media (max-width: 992px) {
+    .layoutnavbar {
+        justify-content: space-around;
+    }
+}
 
+@media (max-width: 768px) {
+    .layoutnavbar li {
+        margin: 0.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 0.5rem 0;
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .layoutnavbar {
+        gap: 0.5rem;  /* Adjust this value based on how much spacing you want */
+        flex-direction: column;  /* Set direction to column so the items stack */
+    }
+
+    .layout-button {
+        width: 100%; /* Makes all buttons full width */
+    }
+    .layout-button[aria-label="Cart"] {
+        margin-top: -20px; /* This reduces the gap; adjust the value as needed */
+    }
+
+    .layout-total-cart-quantity{
+        position: absolute;
+    top: 0.9rem;
+    right: 1.3rem;
+    }
+}
 
 
 
@@ -127,7 +166,7 @@ html, body, #root, #root > * {
 .layout-total-cart-quantity {
     position: absolute;
     top: 0.9rem;
-    right: 1.4rem;
+    right: 1.3rem;
     background-color: rgb(35, 157, 35);
     color: #fff;
     border-radius: 50%; /* Makes it a circle */

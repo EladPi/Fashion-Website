@@ -89,6 +89,7 @@ function Layout({ children }) {
               variant="ghost"
               className='layout-button'
               color='success'
+              aria-label='Cart'
             >
               Cart
             </Button>
