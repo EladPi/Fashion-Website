@@ -87,8 +87,8 @@ function Layout({ children }) {
               aria-label='Cart'
             >
               Cart
-            </Button>
-            <span className='layout-total-cart-quantity' style={numOfItems === 0 ? { backgroundColor: 'transparent' } : null}>{numOfItems > 0 ? numOfItems : ''}</span>
+              <span className='layout-total-cart-quantity' style={numOfItems === 0 ? { backgroundColor: 'transparent' } : null}>{numOfItems > 0 ? numOfItems : ''}</span>
+            </Button>            
             <ul className="layoutdropdown cartlayoutdropdown">
               {cartItems.map(item => (
                 <li key={item.id}>
