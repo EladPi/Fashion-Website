@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {NextUIProvider} from "@nextui-org/react";
+import { NextUIProvider } from "@nextui-org/react";
 
 ReactDOM.render(
   <NextUIProvider>

@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
-import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Button } from '@nextui-org/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -27,7 +24,7 @@ function HomePageSlider({ data, fromCategory }) {
 
   return (
     <>
-      
+
       {fromCategory === 'NewCollection' ? <h2>New Collection</h2> : <h2> Whats Hot?</h2>}
       <Swiper
         slidesPerView={3}
@@ -50,7 +47,7 @@ function HomePageSlider({ data, fromCategory }) {
 
 
         className="mySwiper"
-      > 
+      >
         {data.map((item, index) => (
           <SwiperSlide key={index}>
             <div className="slider-card">

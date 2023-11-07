@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectSpecificItemFromMen } from '../store/reducers/menSlice';
@@ -11,10 +10,10 @@ import { addItemToCart } from '../store/reducers/cartSlice';
 import { selectCartNumberOfItems } from '../store/reducers/cartSlice';
 import { selectCartItems } from '../store/reducers/cartSlice';
 import { Button } from '@nextui-org/react';
-import '../styles/item.css'; // Assuming you'll have a separate CSS file for this component
+import '../styles/item.css';
 
 export const Item = () => {
-    const { category, itemId, itemName } = useParams();
+    const { category, itemId } = useParams();
     const dispatch = useDispatch();
     const cartItems = useSelector(selectCartNumberOfItems)
     const ifItemIsInCart = useSelector(selectCartItems)

@@ -1,14 +1,12 @@
-import { incrementByOne, decrementByOne, selectCartItems, selectCartNumberOfItems, selectCartTotalAmount } from '../../store/reducers/cartSlice';
+import { incrementByOne, decrementByOne, selectCartItems, selectCartTotalAmount } from '../../store/reducers/cartSlice';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { PaymentForm } from './PaymentForm';
-import { Button } from '@nextui-org/react';
 import '../../styles/cart.css';
 
 
 export function Cart() {
     const cartItems = useSelector(selectCartItems);
-    const numOfItems = useSelector(selectCartNumberOfItems);
     const cartTotalPrice = useSelector(selectCartTotalAmount);
     const dispatch = useDispatch();
 

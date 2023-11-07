@@ -1,4 +1,3 @@
-import React from 'react';
 import { selectBestSellersMen } from '../../store/reducers/bestSellersSlice';
 import { selectNewArrivalsWomen } from '../../store/reducers/newArrivalsSlice';
 import { useSelector } from 'react-redux';
@@ -12,10 +11,10 @@ function HomePage() {
 
     return (
         <>
-        <div className='home-page-slider-div'>
-        <HomePageSlider data ={bestSellers} fromCategory='NewCollection'/>
-        <HomePageSlider data ={newArrivals} fromCategory='WhatsHot'/>
-        </div>
+            <div className='home-page-slider-div'>
+                <HomePageSlider data={bestSellers} fromCategory='NewCollection' />
+                <HomePageSlider data={newArrivals} fromCategory='WhatsHot' />
+            </div>
         </>
     );
 }

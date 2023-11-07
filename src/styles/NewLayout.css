@@ -1,4 +1,6 @@
-body, h1, a {
+body,
+h1,
+a {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -37,30 +39,29 @@ body, h1, a {
 }
 
 .layoutnavbar li {
-    margin: 0 15px; /* Space between each navbar item */
+    margin: 0 15px;
 }
 
 .layoutnavbar a {
     text-decoration: none;
-    color: #333;  /* Dark color for text */
-    padding: 5px 10px;  /* Padding around each link */
-    border-radius: 5px;  /* Slightly rounded corners */
-    transition: background-color 0.3s, color 0.3s;  /* Smooth transition for hover */
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .layoutnavbar a:hover {
-    background-color: #eaeaea;  /* Light gray background on hover */
-    color: #555;  /* Slightly darker text on hover */
+    background-color: #eaeaea;
+    color: #555;
 }
 
 
 
-.layoutnavbar > ul > li {
+.layoutnavbar>ul>li {
     position: relative;
 }
 
 
-/* Styles for the dropdown */
 .layoutdropdown {
     display: none;
     position: absolute;
@@ -75,64 +76,62 @@ body, h1, a {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 135px;
     z-index: 1000;
-    
+
 }
 
 .layoutdropdown li {
-    padding: 10px;  /* Padding inside each dropdown item */
-    border-bottom: 1px solid #eaeaea;  /* Border between items */
-    transition: background-color 0.3s;  /* Smooth transition for hover */
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+    transition: background-color 0.3s;
     display: block;
 }
 
 .layoutdropdown li:last-child {
-    border-bottom: none;  /* Removes border for the last item */
+    border-bottom: none;
 }
 
 .layoutdropdown li:hover {
-    background-color: #eaeaea;  /* Lighter gray background on hover */
+    background-color: #eaeaea;
 }
 
 .layoutdropdown a {
-    display: block;  /* Makes the entire area clickable */
+    display: block;
 }
 
 .layoutnavbar li:hover .layoutdropdown {
     display: block;
-    
+
 }
 
 
 
 /* Responsive Navigation styles */
 @media (max-width: 768px) {
-    .layoutnavbar > ul {
-        display: none; /* hide by default for mobile */
+    .layoutnavbar>ul {
+        display: none;
         flex-direction: column;
     }
 
-    .layoutnavbar.active > ul {
-        display: flex;  /* show when menu is active */
+    .layoutnavbar.active>ul {
+        display: flex;
     }
 
-    /* Show dropdown when parent <a> is clicked for mobile */
-    .layoutnavbar li.active > ul.layoutdropdown {
-        display: block; 
+    .layoutnavbar li.active>ul.layoutdropdown {
+        display: block;
     }
 
     .burger-menu {
-        display: block; /* show burger menu button for mobile */
+        display: block;
     }
 }
 
-/* Desktop navigation styles */
 @media (min-width: 769px) {
-    .layoutnavbar > ul {
-        display: flex;  /* horizontal nav for desktop */
+    .layoutnavbar>ul {
+        display: flex;
         justify-content: center;
     }
 
     .burger-menu {
-        display: none;  /* hide burger menu button for desktop */
+        display: none;
     }
 }

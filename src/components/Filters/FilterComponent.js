@@ -1,20 +1,18 @@
-// FilterComponent.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { Form, Button, Dropdown } from 'react-bootstrap';
+import { Form, Dropdown } from 'react-bootstrap';
 import '../../styles/filter.css'
 
-const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentFilters }) => {
+const FilterComponent = ({ applyFilter, clearFilters, currentFilters }) => {
     const dispatch = useDispatch();
     const location = useLocation();
     const navigation = useNavigate();
 
-    const [price, setPrice] = useState();  // Default to the middle of your range
+    const [price, setPrice] = useState();
 
 
-    //Whenever the URL changes, the filters are reseted.
     useEffect(() => {
         dispatch(clearFilters())
     }, [location]);
@@ -60,7 +58,6 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
                             value="all"
                             onChange={handleFilterChange}
                         />
-                        {/* Add similar radio buttons for Shoes, Pants, etc. */}
                     </Dropdown.Menu>
                 </Dropdown>
 
@@ -111,7 +108,6 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
                             value="green"
                             onChange={handleFilterChange}
                         />
-                        {/* Add similar radio buttons for Black, White, etc. */}
                     </Dropdown.Menu>
                 </Dropdown>
 
@@ -162,7 +158,6 @@ const FilterComponent = ({ callingComponent, applyFilter, clearFilters, currentF
                             value="45"
                             onChange={handleFilterChange}
                         />
-                        {/* Add similar radio buttons for different sizes */}
                     </Dropdown.Menu>
                 </Dropdown>
 

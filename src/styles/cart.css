@@ -1,5 +1,5 @@
 /* Global Styles for the Cart Component */
-.cart-page-div{
+.cart-page-div {
     color: white;
 }
 
@@ -16,13 +16,12 @@
     display: flex;
     align-items: center;
     justify-content: right;
-    border-bottom: 1px solid #e0e0e0; /* Separate items with a line */
-    padding: 15px 0; /* Provide some spacing above and below the item */
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
     max-width: 60%;
     margin: auto;
 }
 
-/* Product Image */
 .cart-item-img {
     width: 100px;
     height: 100px;
@@ -39,37 +38,32 @@
     transition: all 0.2s;
 }
 
-#minus-icon{
+#minus-icon {
     width: 26.5px;
     height: 34px;
 }
 
-#plus-icon{
+#plus-icon {
     width: 30px;
     height: 35px;
 }
 
-.cart-icon:hover{
+.cart-icon:hover {
     transform: scale(1.1)
 }
 
 /* Item Details */
 .cart-item-details {
-    flex-grow: 1; /* Ensures that this section uses all available space */
+    flex-grow: 1;
     display: inline-block;
-    
+
 }
 
 
 
 
-/* Total Price */
 #cart-total-price {
     margin-top: 20px;
-    font-size: 1.2rem; /* Make the total price slightly larger */
-    font-weight: 500; /* Make the text bold */
+    font-size: 1.2rem;
+    font-weight: 500;
 }
-
-
-
-

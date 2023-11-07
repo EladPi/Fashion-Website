@@ -1,8 +1,8 @@
-*{
+* {
   font-family: 'Cantarell', sans-serif;
 }
 
-span{
+span {
   font-weight: 400;
   font-family: 'Cantarell', sans-serif;
   font-size: 1.9rem;
@@ -13,8 +13,8 @@ span{
   max-width: 70%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* This makes it responsive */
-  gap: 20px; /* Adjust the gap between items as needed */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   padding: 20px;
 }
 
@@ -47,21 +47,23 @@ span{
 }
 
 
-.grid-item .shop-link:hover , .add-to-cart-btn:hover {
+.grid-item .shop-link:hover,
+.add-to-cart-btn:hover {
   background-color: #555;
 }
 
 
-.grid-item .shop-link , .add-to-cart-btn {
+.grid-item .shop-link,
+.add-to-cart-btn {
   display: inline-block;
   max-height: 40px;
   background-color: #333;
-  color: #fff; 
-  text-decoration: none; /* Remove the underline */
+  color: #fff;
+  text-decoration: none;
   padding: 8px 15px;
   cursor: pointer;
   border: none;
-  border-radius: 4px; /* Optional, for rounded corners */
+  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
@@ -70,19 +72,3 @@ span{
   align-self: center;
   gap: 10px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

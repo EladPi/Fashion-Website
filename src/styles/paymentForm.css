@@ -1,19 +1,17 @@
-
-
-.container.mt-5{
+.container.mt-5 {
     max-width: 530px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* Optional: Add a subtle shadow to the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     background-color: transparent;
     color: white;
     border: 0.2px solid white;
-    border-radius: 5px;  /* Round the container's edges */
+    border-radius: 5px;
     margin-bottom: 20px;
     box-shadow: 0px 4px 12px rgba(214, 202, 202, 0.2);
 
 }
 
 
-.paymentform-button{
+.paymentform-button {
     color: white;
 }

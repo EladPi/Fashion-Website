@@ -1,26 +1,29 @@
-html, body, #root, #root > * {
+html,
+body,
+#root,
+#root>* {
     background-color: #181818 !important;
     min-height: 100vh;
-  }
+}
 
-  .home-page {
+.home-page {
     display: flex;
     flex-direction: column;
     text-align: center;
     background-color: #181818;
 }
 
-.layout-button{
+.layout-button {
     margin-right: 8px;
-    
+
 }
 
-.gotocart-button{
+.gotocart-button {
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
-.nav-link{
+.nav-link {
     margin: 5px;
 }
 
@@ -43,14 +46,15 @@ html, body, #root, #root > * {
     margin-right: auto;
 }
 
-.logo-link, .logo-link:hover {
+.logo-link,
+.logo-link:hover {
     text-decoration: none;
 }
 
 .layoutnavbar {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;  /* This will wrap navbar items on smaller screens */
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -84,25 +88,28 @@ html, body, #root, #root > * {
     .header {
         padding: 0.5rem 0;
     }
+
     .logo {
         font-size: 1.5rem;
     }
+
     .layoutnavbar {
-        gap: 0.5rem;  /* Adjust this value based on how much spacing you want */
-        flex-direction: column;  /* Set direction to column so the items stack */
+        gap: 0.5rem;
+        flex-direction: column;
     }
 
     .layout-button {
-        width: 100%; /* Makes all buttons full width */
-    }
-    .layout-button[aria-label="Cart"] {
-        margin-top: -20px; /* This reduces the gap; adjust the value as needed */
+        width: 100%;
     }
 
-    .layout-total-cart-quantity{
+    .layout-button[aria-label="Cart"] {
+        margin-top: -20px;
+    }
+
+    .layout-total-cart-quantity {
         position: absolute;
-    top: 0.9rem;
-    right: 1.3rem;
+        top: 0.9rem;
+        right: 1.3rem;
     }
 }
 
@@ -122,8 +129,8 @@ html, body, #root, #root > * {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 135px;
     z-index: 1000;
-    cursor:default;
-    
+    cursor: default;
+
 }
 
 
@@ -131,10 +138,10 @@ html, body, #root, #root > * {
     margin: 0;
     padding: 10px 20px;
     transition: background-color 0.3s;
-    
+
 }
 
-.layoutdropdown.cartlayoutdropdown li{
+.layoutdropdown.cartlayoutdropdown li {
     cursor: default;
 }
 
@@ -143,13 +150,13 @@ html, body, #root, #root > * {
 }
 
 
-#layout-item-container:hover{
+#layout-item-container:hover {
     background-color: #f4f4f4;
 }
 
 .layoutnavbar li:hover .layoutdropdown {
     display: block;
-    
+
 }
 
 
@@ -161,7 +168,6 @@ html, body, #root, #root > * {
 
 /* THE CART STYLES: */
 
-/* 1. Style the number next to the Cart's <a> */
 
 .layout-total-cart-quantity {
     position: absolute;
@@ -169,75 +175,75 @@ html, body, #root, #root > * {
     right: 1.3rem;
     background-color: rgb(35, 157, 35);
     color: #fff;
-    border-radius: 50%; /* Makes it a circle */
-    padding: 0.05rem 0.25rem; /* Gives it some space */
-    font-size: 0.6rem; /* Adjust the font size if needed */
-    transform: translate(50%, -50%); /* Adjusts its position to top-right outside the <a> */
+    border-radius: 50%;
+    padding: 0.05rem 0.25rem;
+    font-size: 0.6rem;
+    transform: translate(50%, -50%);
     z-index: 1000;
 }
 
-/* 2. Style the cart item */
 .layout-item-container {
     display: flex;
-    align-items: center; /* Center items vertically */
+    align-items: center;
 }
 
 .layout-cart-item-img {
     max-width: 90px;
     max-height: 90px;
-    object-fit: cover; /* Ensures the image keeps its aspect ratio */
+    object-fit: cover;
     margin-right: 10px;
 }
 
 .cart-icon {
-    width: 30px;   /* or any preferred width */
-    height: 30px;  /* or any preferred height */
+    width: 30px;
+    height: 30px;
     padding-top: 5px;
     transition: all 0.2s;
 }
 
-.cart-icon:hover{
+.cart-icon:hover {
     transform: scale(1.1)
 }
 
 .layout-item-detail#layout-item-name,
 .layout-item-detail#layout-item-price {
-    flex: 1; /* Allows these elements to take up available space */
-    white-space: nowrap; 
+    flex: 1;
+    white-space: nowrap;
 }
 
-.layoutdropdown.cartlayoutdropdown{
-    width: auto; /* Change from fixed width to auto */
-    min-width: 135px; /* Ensuring the width isn't too small */
+.layoutdropdown.cartlayoutdropdown {
+    width: auto;
+    min-width: 135px;
 }
 
-#layout-item-quantity{
+#layout-item-quantity {
     margin: auto 5px;
 }
 
-.layout-item-details{
+.layout-item-details {
     display: flex;
     flex-direction: column;
 }
 
-.layout-item-details div{
+.layout-item-details div {
     margin-top: -10px;
 }
 
-#layout-item-price{
+#layout-item-price {
     margin-bottom: 12px;
 }
-#layout-item-name{
+
+#layout-item-name {
     margin-bottom: 2px;
 }
 
 
-.layoutdropdown.cartlayoutdropdown li:hover{
+.layoutdropdown.cartlayoutdropdown li:hover {
     background-color: #f4f4f4;
 }
 
 
-#layout-button-minus{
+#layout-button-minus {
     max-width: 20px;
     padding-left: 7px;
     padding-right: 13px;
@@ -245,7 +251,7 @@ html, body, #root, #root > * {
     padding-bottom: 3px;
 }
 
-#layout-button-plus{
+#layout-button-plus {
     max-width: 20px;
     padding-left: 5px;
     padding-right: 15.4px;

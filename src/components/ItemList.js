@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { slugify } from "../utilities/slugify";
 import { useDispatch, useSelector } from "react-redux";
 import { addItemToCart } from "../store/reducers/cartSlice";
-import { Button, useSelect } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import { selectCartItems } from "../store/reducers/cartSlice";
 import '../styles/itemList.css';
 
@@ -19,10 +19,10 @@ export function ItemList({ items, category }) {
             <div className="grid-container">
                 {items.map((item) => (
                     <div className="grid-item" key={item.id}>
-                        <img 
-                        src={item.imgSrc} 
-                        alt={item.name} 
-                        onError={(e) => { e.target.onerror = null; e.target.src="logo192.jpg" }}
+                        <img
+                            src={item.imgSrc}
+                            alt={item.name}
+                            onError={(e) => { e.target.onerror = null; e.target.src = "logo192.jpg" }}
                         />
                         <h3>{item.name}</h3>
                         <p>{item.description}</p>

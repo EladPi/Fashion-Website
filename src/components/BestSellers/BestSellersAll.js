@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSelector } from 'react-redux';
 import { ItemList } from '../ItemList';
 import { selectBestSellersAll, selectFilteredBestSellersItems, applyFilter , clearFilters, selectCurrentFilters } from '../../store/reducers/bestSellersSlice';

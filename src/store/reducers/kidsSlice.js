@@ -8,7 +8,7 @@ const kidsTShirtsItems = data.items.filter(item => item.category === 'Kids T-Shi
 const kidsInitialState = {
   items: [...kidsShoesItems, ...kidsPantsItems, ...kidsTShirtsItems],
   filters: {
-    type: [],  // Now an array
+    type: [],
     color: [],
     size: [],
     priceRange: { min: 0, max: 500 }
@@ -20,11 +20,9 @@ const kidsSlice = createSlice({
   initialState: kidsInitialState,
   reducers: {
     addItem: (state, action) => {
-      // Adding the new item to the state's items array
       state.items.push(action.payload);
     },
     removeItem: (state, action) => {
-      // Removing the item from the state's items array based on its id
       state.items = state.items.filter(item => item.id !== action.payload.id);
     },
     updateItem: (state, action) => {
@@ -39,39 +37,38 @@ const kidsSlice = createSlice({
     },
     applyFilter: (state, action) => {
       const { type, color, size, priceRange } = action.payload;
-      
-      if(type) {
-        if(type === 'all') {
+
+      if (type) {
+        if (type === 'all') {
           state.filters.type = [];
-        } else if(!state.filters.type.includes(type)) {
+        } else if (!state.filters.type.includes(type)) {
           state.filters.type.push(type);
         } else {
           state.filters.type = state.filters.type.filter(t => t !== type);  // Remove if already present
         }
       }
-    
-      // Repeat similar logic for color and size
-      if(color) {
-        if(color === 'all') {
+
+      if (color) {
+        if (color === 'all') {
           state.filters.color = [];
-        } else if(!state.filters.color.includes(color)) {
+        } else if (!state.filters.color.includes(color)) {
           state.filters.color.push(color);
         } else {
           state.filters.color = state.filters.color.filter(c => c !== color);
         }
       }
-    
-      if(size) {
-        if(size === 'all') {
+
+      if (size) {
+        if (size === 'all') {
           state.filters.size = [];
-        } else if(!state.filters.size.includes(size)) {
+        } else if (!state.filters.size.includes(size)) {
           state.filters.size.push(size);
         } else {
           state.filters.size = state.filters.size.filter(s => s !== size);
         }
       }
-      
-      if(priceRange) state.filters.priceRange = priceRange;
+
+      if (priceRange) state.filters.priceRange = priceRange;
     },
     clearFilters: (state) => {
       state.filters = {
@@ -80,8 +77,7 @@ const kidsSlice = createSlice({
         size: [],
         priceRange: { min: 0, max: 500 }
       };
-    }   
-    // Other reducers will go here, like removeItem, updateItem, etc.
+    }
   }
 });
 
@@ -89,7 +85,7 @@ export const selectKidsShoes = (state) => state.kids.items.filter(item => item.c
 export const selectKidsPants = (state) => state.kids.items.filter(item => item.category === 'Kids Pants');
 export const selectKidsTShirts = (state) => state.kids.items.filter(item => item.category === 'Kids T-Shirts');
 export const selectKidsAll = (state) => state.kids.items;
-export const selectSpecificItemFromKids = (state,itemId) => state.kids.items.find(item => item.id == itemId);
+export const selectSpecificItemFromKids = (state, itemId) => state.kids.items.find(item => item.id == itemId);
 
 export const selectFilteredKidsItems = (state, startingState) => {
   let filteredItems = startingState;
@@ -99,7 +95,6 @@ export const selectFilteredKidsItems = (state, startingState) => {
   if (color.length > 0) filteredItems = filteredItems.filter(item => color.includes(item.color));
   if (size.length > 0) filteredItems = filteredItems.filter(item => size.includes(item.size));
 
-  // Assuming each item has a 'price' field
   filteredItems = filteredItems.filter(item => item.price >= priceRange.min && item.price <= priceRange.max);
 
   return filteredItems;
@@ -109,7 +104,7 @@ export const selectCurrentFilters = (state) => state.kids.filters;
 
 
 
-export const { addItem, removeItem, updateItem, applyFilter , clearFilters } = kidsSlice.actions;
+export const { addItem, removeItem, updateItem, applyFilter, clearFilters } = kidsSlice.actions;
 export default kidsSlice.reducer;
 
 

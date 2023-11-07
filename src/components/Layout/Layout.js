@@ -1,18 +1,16 @@
-// src/components/Layout.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { incrementByOne, decrementByOne, selectCartItems, selectCartNumberOfItems, selectCartTotalAmount } from '../../store/reducers/cartSlice';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button } from "@nextui-org/react";
-import '../../styles/Layout.css'; // Assuming the styles for the header are here
+import '../../styles/Layout.css';
 
 
 function Layout({ children }) {
   const cartItems = useSelector(selectCartItems);
   const numOfItems = useSelector(selectCartNumberOfItems);
   const cartTotalPrice = useSelector(selectCartTotalAmount);
-  const [menuActive, setMenuActive] = useState(false);
   const dispatch = useDispatch();
 
 
@@ -23,9 +21,6 @@ function Layout({ children }) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  const toggleMenu = () => {
-    setMenuActive(!menuActive);
-  };
 
   const handleIncrement = (item) => {
     dispatch(incrementByOne(item))
