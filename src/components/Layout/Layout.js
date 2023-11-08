@@ -13,6 +13,8 @@ function Layout({ children }) {
   const cartTotalPrice = useSelector(selectCartTotalAmount);
   const dispatch = useDispatch();
 
+  const [isCartDropdownVisible, setIsCartDropdownVisible] = useState(false);
+
 
   const options = ['men', 'women', 'kids'];
   const generalOptions = ['bestsellers', 'newarrivals'];
@@ -29,6 +31,15 @@ function Layout({ children }) {
   const handleDecrement = (item) => {
     dispatch(decrementByOne(item));
   }
+
+  const showCartDropdown = () => {
+    setIsCartDropdownVisible(true);
+  };
+
+  const hideCartDropdown = () => {
+    setIsCartDropdownVisible(!isCartDropdownVisible );
+  };
+
 
 
   return (
@@ -79,17 +90,21 @@ function Layout({ children }) {
 
 
 
-          <li>
-            <Button
-              variant="ghost"
-              className='layout-button'
-              color='success'
-              aria-label='Cart'
-            >
-              Cart
-              <span className='layout-total-cart-quantity' style={numOfItems === 0 ? { backgroundColor: 'transparent' } : null}>{numOfItems > 0 ? numOfItems : ''}</span>
-            </Button>            
-            <ul className="layoutdropdown cartlayoutdropdown">
+          <Button
+            variant="ghost"
+            className='layout-button layout-cart-button'
+            color='success'
+            aria-label='Cart'
+            onMouseEnter={showCartDropdown}
+            onMouseLeave={hideCartDropdown}
+          >
+            Cart
+            <span className='layout-total-cart-quantity' style={numOfItems === 0 ? { backgroundColor: 'transparent' } : null}>{numOfItems > 0 ? numOfItems : ''}</span>
+          </Button>
+          <li className='layoutdropdown-cart-li'>
+            <ul className={`layoutdropdown cartlayoutdropdown ${isCartDropdownVisible ? 'visible' : ''}`}
+              onMouseEnter={showCartDropdown}
+              onMouseLeave={hideCartDropdown}>
               {cartItems.map(item => (
                 <li key={item.id}>
                   <div className='layout-item-container'>
@@ -111,7 +126,7 @@ function Layout({ children }) {
                 </li>
               ))}
               {cartTotalPrice > 0 ? <li className='item-detail' id='cart-total-price'>Total Price: ${cartTotalPrice}</li> : 'Your cart is currently empty'}
-
+                <br/>
               <Link className='cart-link' to="/cart">
                 <Button size='sm' variant="flat" color='success' className='gotocart-button'>
                   Go To Cart

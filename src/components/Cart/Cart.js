@@ -10,8 +10,6 @@ export function Cart() {
     const cartTotalPrice = useSelector(selectCartTotalAmount);
     const dispatch = useDispatch();
 
-    console.log(cartItems);
-
     const handleIncrement = (item) => {
         dispatch(incrementByOne(item))
     }

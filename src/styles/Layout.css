@@ -1,11 +1,14 @@
-html,
-body,
-#root,
-#root>* {
+/* Base styles */
+html, body, #root, #root > * {
     background-color: #181818 !important;
     min-height: 100vh;
 }
 
+a{
+    text-decoration: none;
+}
+
+/* Home Page Layout */
 .home-page {
     display: flex;
     flex-direction: column;
@@ -13,20 +16,7 @@ body,
     background-color: #181818;
 }
 
-.layout-button {
-    margin-right: 8px;
-
-}
-
-.gotocart-button {
-    margin-top: 0px;
-    margin-bottom: 10px;
-}
-
-.nav-link {
-    margin: 5px;
-}
-
+/* Header Styles */
 .header {
     background-color: #0B0B0B;
     padding: 1rem 0;
@@ -51,6 +41,7 @@ body,
     text-decoration: none;
 }
 
+/* Navbar Styles */
 .layoutnavbar {
     display: flex;
     justify-content: center;
@@ -59,68 +50,72 @@ body,
     align-items: center;
 }
 
-
 .layoutnavbar li {
     position: relative;
     margin-right: 0.5rem;
     cursor: pointer;
+    display: flex;
+    
 }
 
-
+/* Dropdown Menu Styles */
 .layoutdropdown {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    right:-50px;
+    top: 20px;
     list-style-type: none;
     background-color: #f4f4f4;
     border: 1px solid #eaeaea;
     padding: 0;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 135px;
+    width: 200px;
+    font-size: 1em;
     z-index: 1000;
     cursor: default;
-
 }
-
 
 .layoutdropdown li {
     margin: 0;
     padding: 10px 20px;
     transition: background-color 0.3s;
-
 }
 
 .layoutdropdown.cartlayoutdropdown li {
     cursor: default;
 }
 
-.layoutdropdown li:hover {
+.layoutdropdown li:hover,
+.layoutdropdown.cartlayoutdropdown li:hover {
     background-color: #eaeaea;
 }
 
-
-#layout-item-container:hover {
-    background-color: #f4f4f4;
+.layoutdropdown.visible {
+  display: block;
 }
 
-.layoutnavbar li:hover .layoutdropdown {
-    display: block;
-
+/* Button Styles */
+.layout-button {
+    margin-right: 8px;
+    
 }
 
+.gotocart-button {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
 
+.layout-cart-button{
+    position: relative;
+}
 
+/* Link Styles */
+.nav-link {
+    margin: 5px;
+}
 
-
-
-
-
-/* THE CART STYLES: */
-
-
+/* Cart Styles */
 .layout-total-cart-quantity {
     position: absolute;
     top: 0.7rem;
@@ -146,32 +141,6 @@ body,
     margin-right: 10px;
 }
 
-.cart-icon {
-    width: 30px;
-    height: 30px;
-    padding-top: 5px;
-    transition: all 0.2s;
-}
-
-.cart-icon:hover {
-    transform: scale(1.1)
-}
-
-.layout-item-detail#layout-item-name,
-.layout-item-detail#layout-item-price {
-    flex: 1;
-    white-space: nowrap;
-}
-
-.layoutdropdown.cartlayoutdropdown {
-    width: auto;
-    min-width: 135px;
-}
-
-#layout-item-quantity {
-    margin: auto 5px;
-}
-
 .layout-item-details {
     display: flex;
     flex-direction: column;
@@ -181,55 +150,32 @@ body,
     margin-top: -10px;
 }
 
-#layout-item-price {
-    margin-bottom: 12px;
+.layout-item-detail#layout-item-name,
+.layout-item-detail#layout-item-price {
+    flex: 1;
+    white-space: nowrap;
 }
 
-#layout-item-name {
-    margin-bottom: 2px;
+.cart-icon {
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    transition: all 0.2s;
 }
 
-
-.layoutdropdown.cartlayoutdropdown li:hover {
-    background-color: #f4f4f4;
-}
-
-
-#layout-button-minus {
-    max-width: 20px;
-    padding-left: 7px;
-    padding-right: 13px;
-    padding-top: 1px;
-    padding-bottom: 3px;
-}
-
-#layout-button-plus {
-    max-width: 20px;
-    padding-left: 5px;
-    padding-right: 15.4px;
-    padding-top: 1px;
-    padding-bottom: 3px;
-}
-
-.layout-button[aria-label="Cart"] {
-    position: relative;
-    right: 1.1em;
+.cart-icon:hover {
+    transform: scale(1.1);
 }
 
 
-
-
+/* Media Queries */
 @media (max-width: 1200px) {
     .logo {
         font-size: 2rem;
     }
 }
 
-@media (max-width: 992px) {
-    .layoutnavbar {
-        justify-content: space-around;
-    }
-}
+
 
 @media (max-width: 768px) {
     .layoutnavbar li {
@@ -253,19 +199,18 @@ body,
         margin: auto;
     }
 
-    .layout-button {
-        width: 100%;
+    .layoutdropdown{
+        right: -95px;
+        top: -12px;
     }
 
-    .layout-button[aria-label="Cart"] {
-        width: 100%;
-        position: relative;
-        right: 4px;
-        top: -27px;
+    .layout-button{
+        width: 50%;
     }
 
-    .layout-total-cart-quantity {
-        left: 7em;
-        top: 1.2em;
+    .layout-total-cart-quantity{
+        left: 50px;
     }
+
+   
 }
