@@ -33,17 +33,17 @@ function Layout({ children }) {
   }
 
   const showCartDropdown = () => {
-    setIsCartDropdownVisible(true);
+    setIsCartDropdownVisible(!isCartDropdownVisible);
   };
 
   const hideCartDropdown = () => {
-    setIsCartDropdownVisible(!isCartDropdownVisible );
+    setIsCartDropdownVisible(false);
   };
 
 
 
   return (
-    <div className="home-page">
+    <div className="home-page" onClick={hideCartDropdown}>
       <header className="header">
         <Link className='logo-link' to='/'><h1 className="logo">My Fashion Store</h1></Link>
         <nav className='layoutnavbar'>
@@ -95,16 +95,14 @@ function Layout({ children }) {
             className='layout-button layout-cart-button'
             color='success'
             aria-label='Cart'
-            onMouseEnter={showCartDropdown}
-            onMouseLeave={hideCartDropdown}
+            onClick={showCartDropdown}
           >
             Cart
             <span className='layout-total-cart-quantity' style={numOfItems === 0 ? { backgroundColor: 'transparent' } : null}>{numOfItems > 0 ? numOfItems : ''}</span>
           </Button>
           <li className='layoutdropdown-cart-li'>
             <ul className={`layoutdropdown cartlayoutdropdown ${isCartDropdownVisible ? 'visible' : ''}`}
-              onMouseEnter={showCartDropdown}
-              onMouseLeave={hideCartDropdown}>
+            >
               {cartItems.map(item => (
                 <li key={item.id}>
                   <div className='layout-item-container'>
@@ -126,7 +124,7 @@ function Layout({ children }) {
                 </li>
               ))}
               {cartTotalPrice > 0 ? <li className='item-detail' id='cart-total-price'>Total Price: ${cartTotalPrice}</li> : 'Your cart is currently empty'}
-                <br/>
+              <br />
               <Link className='cart-link' to="/cart">
                 <Button size='sm' variant="flat" color='success' className='gotocart-button'>
                   Go To Cart
